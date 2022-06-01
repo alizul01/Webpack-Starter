@@ -1,5 +1,16 @@
+import axios from 'axios'
+
 function generateQuotes() {
-    return "I'm not a great programmer; I'm just a good programmer with great habits."
+    const config = {
+        headers: {
+            Accept: 'application/json'
+        }
+    }
+
+    axios.get('https://icanhazdadjoke.com/', config)
+        .then(res => {
+            document.getElementById('jokes').innerHTML = res.data.joke;
+        })
 }
 
 export default generateQuotes;
