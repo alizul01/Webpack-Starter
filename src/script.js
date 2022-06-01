@@ -1,1 +1,3 @@
-console.log('Hello World');
+import generateQuotes from './generateQuotes'
+
+console.log(generateQuotes());
